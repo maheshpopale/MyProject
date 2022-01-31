@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4">
+           <div class="card" id="card">
+            <h1 class="text-primary text-center p-3">Update Category</h1> <br>
+            <form #updateForm="ngForm" (ngSubmit)="updateCategory(updateForm);" class="p-3">
+                <div class="form-group">
+                    <label for="id">Category ID</label>
+                    <input type="text" name="categoryId" [(ngModel)]="categoryId" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="name">Category Name</label>
+                    <input type="text" name="categoryName" [(ngModel)]="categoryName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" name="categoryDescription" [(ngModel)]="categoryDescription" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update Category" class="btn btn-primary btn-block">
+                </div>
+                <div *ngIf="message" class="alert alert-success"> Record Updated Successfully</div>
+            </form>
+           </div>
+        </div>
+    </div>
+</div>

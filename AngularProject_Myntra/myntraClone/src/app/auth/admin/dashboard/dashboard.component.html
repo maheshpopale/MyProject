@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-md navbar-light text-white fixed-top" style="background-color:black; color:white">
+    <a href="#" class="navbar-brand text-white">
+        <h1 class="text-white">MYNTRA</h1>
+    </a>
+    <button class="navbar-toggler" id="icon" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a routerLink="/showAll" class="nav-link active" id="alist">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="alist">
+                  Products
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" routerLink="/addProduct">Add Product</a>
+                  <a class="dropdown-item" routerLink="/viewProducts">View Products</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="alist">
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" routerLink="/addCategory">Add Category</a>
+                  <a class="dropdown-item"routerLink="viewCategories" >View Categories</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/updateUser" class="nav-link" id="alist">View Cutomers</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/updateUser" class="nav-link" id="alist">View Orders</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/addUser" class="nav-link" id="alist">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/logout" class="nav-link" id="alist">Sign Out</a>
+            </li>
+           
+        </ul>
+    </div>
+</nav>
+

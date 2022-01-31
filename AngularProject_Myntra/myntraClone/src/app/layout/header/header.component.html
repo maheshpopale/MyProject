@@ -1,0 +1,39 @@
+<nav *ngIf="navbardisplay" class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: black;">
+    <a href="#" class="navbar-brand text-white">
+        <h1>MYNTRA</h1>
+    </a>
+    <button class="navbar-toggler" id="icon" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <form class="form-inline ml-auto" action="/action_page.php">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-danger" type="submit">Search</button>
+          </form>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a routerLink="/allProducts" class="nav-link active" id="alist">Home</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/addProduct" class="nav-link" id="alist">AddProduct</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/updateUser" class="nav-link" id="alist">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/addUser" class="nav-link" id="alist">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/cart" class="nav-link" id="alist"><i class="fas fa-shopping-cart fa-lg "><i class="badge badge-danger">{{totalItems}}</i></i> </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/signup" class="nav-link" id="alist">SignUp</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/signin" class="nav-link" id="alist">SignIn</a>
+            </li>
+        </ul>
+    </div>
+</nav>

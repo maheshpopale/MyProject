@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4">
+            <div class="card" id="card">
+                <h1 class="text-primary text-center p-3">
+                    Add New Category
+                </h1>
+                <form [formGroup]="categoryForm" (ngSubmit)="postData();" class="p-3">
+                <div class="form-group">
+                    <label for="categoryname">Category Name</label>
+                    <input type="text" class="form-control" formControlName="categoryName" required>
+                    <span *ngIf="categoryForm.get('categoryName').touched && categoryForm.get('categoryName').hasError('required')">Please Enter the Category</span>
+                    <!-- <span *ngIf="categoryForm.get('categoryName').hasError('pattern') ">Please Enter the Alphabets only</span> -->
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea  cols="30" rows="6" class="form-control" formControlName="categoryDescription"></textarea>
+                    <span *ngIf="categoryForm.get('categoryDescription').touched && categoryForm.get('categoryDescription').hasError">Please Enter Description</span>
+                    
+                </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add Category" class="btn btn-primary" [disabled]="!categoryForm.valid">
+                    </div>
+                    <span *ngIf="message" class="alert alert-success text-success">New Category Added Successfully</span>
+                </form>
+            </div>
+        </div>
+    </div>    
+</div>

@@ -1,0 +1,22 @@
+#alist:hover{
+    display: block;
+    background-color:white;
+    color:black;
+}
+#alist{
+    color:white;
+}
+/* .active{
+    display: block;
+    background-color:white;
+    color:red;
+} */
+#logo
+{
+    width: 100px;
+    height:40px;;
+}
+#icon
+{
+    background-color: white;
+}

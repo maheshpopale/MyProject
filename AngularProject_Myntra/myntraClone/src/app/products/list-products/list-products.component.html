@@ -1,0 +1,23 @@
+<div class="row mt-3 bg-light">
+    <div class="col-md-3 mt-3 mb-3" *ngFor="let product of products">
+        <div class="card">
+            <img src='{{product.image}}' alt="ProductImage" height="250" class="card-img-top">
+            <div class="card-body">
+                <h3>{{product.productName}}</h3>
+                <h4 class="text-danger"> Price&nbsp;{{product.productPrice|currency :'INR'}}</h4>
+                <h6>{{product.productDescription}}</h6>
+                <select name="pQuantity" [(ngModel)]="pQuantity" id="" class="form-control" >
+                    <option selected value="1" disabled class="text-primary"></option>
+                    <option value="2">1</option>
+                    <option value="3">2</option>
+                    <option value="4">3</option>
+                    <option value="5">4</option>
+                    <option value="6">5</option>
+                </select>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-info btn-block" (click)="addtoCart(product,pQuantity);">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

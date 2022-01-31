@@ -1,0 +1,12 @@
+.card{
+    height: 60vh;
+    margin:25px;
+    padding:25px;
+}
+.center{
+    text-align:center;
+}
+.center img{
+    height:120px;
+    width:35%;
+}

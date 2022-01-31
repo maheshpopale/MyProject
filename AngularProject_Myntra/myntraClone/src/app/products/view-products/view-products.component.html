@@ -1,0 +1,16 @@
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+        <h4 class="text-danger">All Products</h4>
+       <table class="table table-striped">
+           <tr  *ngFor="let product of products">
+               <td>{{product.productName}}</td>
+               <td><img src='{{product.image}}' height="50" alt="ProductImage"></td>
+               <td>{{product.quantity}}</td>
+               <td>{{product.productPrice}}</td>
+               <td>{{product.productDescription}}</td>
+               <td><a routerLink="/updateProduct/{{product.id}}" class="btn btn-primary">Edit</a></td>
+               <td><a routerLink="/deleteProduct/{{product.id}}" class="btn btn-danger">Delete</a></td>
+           </tr>
+       </table>
+    </div>
+    </div>

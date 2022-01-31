@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-md-3 mt-4">
+        <div class="card" id="card">
+          <h3 class="text-center text-primary p-3">Sign Up</h3>
+                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="p-3">
+            <div class="mb-3">
+               <div class="form-group">
+                 <label for="name">First Name</label>
+                 <input type="text" formControlName="FirstName" placeholder="Enter the FirstName" class="form-control">
+                 <span *ngIf="signUpForm.get('FirstName').touched && signUpForm.get('FirstName').hasError">Enter the First Name</span>
+               </div>
+               </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text"  formControlName="lastName" lastName="ngModel"
+                class="form-control"
+                placeholder="Enter last Name">
+                <span *ngIf="signUpForm.get('lastName').touched && signUpForm.get('lastName').hasError">Enter the Last Name</span>
+            </div>
+            <div class="mb-3">
+                <label for="Emailid" class="form-label">Email address</label>
+                <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  formControlName="email" placeholder="Enter Email" class="form-control"> 
+                <span *ngIf="signUpForm.get('email').touched && signUpForm.get('email').hasError('required')">Enter the Email ID </span>
+                <span *ngIf="signUpForm.get('email').touched && signUpForm.get('email').hasError('email')">Enter Valid Email Address</span>
+              </div>
+            <div class="mb-3">
+                <label for="MobileNumber" class="form-label">Mobile Number</label>
+                <input type="tel"  pattern=".{10}" formControlName="mobileNumber"
+                class="form-control" 
+                placeholder="Enter Mobile Number"
+                >
+                <span *ngIf="signUpForm.get('mobileNumber').touched && signUpForm.get('mobileNumber').hasError('required')">Enter Your Mobile Number</span>
+                <span *ngIf="signUpForm.get('mobileNumber').touched && signUpForm.get('mobileNumber').hasError('maxlength')">Enter Only 10 digits Mobile Number</span>
+              </div>
+            <div class="mb-3">
+                <label for="Address" class="form-label">Address</label>
+                <input type="text"  formControlName="address"
+                class="form-control"
+                placeholder="Enter Address">
+                <span *ngIf="signUpForm.get('address').touched && signUpForm.get('address').hasError('required')">Enter Your Address </span>
+              </div>
+            <div class="mb-3">
+                <label for="PostalCode" class="form-label">Posatal code</label>
+                <input type="number" pattern=".{6}" formControlName="postalCode"
+                class="form-control" 
+                placeholder="Enter Postal code">
+                <span *ngIf="signUpForm.get('postalCode').touched && signUpForm.get('postalCode').hasError('required')">Enter Postal Code </span>
+                <span *ngIf="signUpForm.get('postalCode').touched && signUpForm.get('postalCode').hasError('maxlength')">Enter Only 6 Digits </span>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password"  formControlName="userPassword"
+                class="form-control" 
+                placeholder="Enter Password">
+                <span *ngIf="signUpForm.get('userPassword').touched && signUpForm.get('userPassword').hasError('required')">Enter Your Password </span>
+                <span *ngIf="signUpForm.get('userPassword').touched && signUpForm.get('userPassword').hasError('minlength')">Minimum 8 Characters </span>
+              </div>
+              <div class="mb-3">
+                <label for="confirm" class="form-label">Confirm Password</label>
+                <input type="password" formControlName="conPassword"
+                class="form-control" 
+                placeholder="Enter Confirm Password">
+                <span *ngIf="signUpForm.get('conPassword').touched && signUpForm.get('userPassword').hasError('conPassword')">Please Confirm Password </span>
+              </div>
+              <button type="submit"
+             class="btn btn-primary btn-block">Sign Up</button>
+             <div class="message mt-3 text-success" *ngIf="registered">Registered Successfully</div>
+              <a href="" class="mt-5">Already Member? Click to Login</a> 
+                         
+            
+          </form>
+        </div>
+    </div>
+  </div>

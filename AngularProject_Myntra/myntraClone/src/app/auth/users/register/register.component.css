@@ -1,0 +1,9 @@
+input.ng-touched.ng-invalid{
+    border:1px solid red;
+}
+span{
+    color:red;
+}
+#card{
+    border:2px outset lightblue;
+}

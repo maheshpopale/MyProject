@@ -1,0 +1,6 @@
+<ul class="list-group">
+    <li  *ngFor="let category of categories" class="list-group-item">
+      <a routerLink="/bycategory/{{category.id}}">{{category.Name}}</a>
+    </li>
+    
+  </ul>
