@@ -4,3 +4,6 @@ input.ng-touched.ng-invalid{
 span{
     color:red;
 }
+#card{
+    border:2px outset lightblue;
+}

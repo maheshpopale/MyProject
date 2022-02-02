@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,8 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
 
   public cartItemList:any=[];
-   public productList=new BehaviorSubject<any>([]);
-  constructor() { }
+  public productList=new BehaviorSubject<any>([]);
+  constructor(private http:HttpClient) { }
   getProductList()
   {
     return this.productList.asObservable();
@@ -46,5 +47,12 @@ export class CartService {
   removeAllCart(){
     this.cartItemList=[];
     this.productList.next(this.cartItemList);
+  }
+
+  //addCartData to database
+  insertCart(productName:string,productPrice:number,productQuantity:number,userId:number){
+    const cartItem={productName:productName,productPrice:productPrice,productQuantity:productQuantity,userId:userId};
+    console.log(cartItem);
+    // return this.http.post('http://localhost:3000/app/cartitems/add/',cartItem);
   }
 }

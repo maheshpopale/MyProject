@@ -5,29 +5,15 @@ module.exports=(app)=>{
     const CategoryController=require('./category-controller');
     const ProductController=require('./product-controller');
     const UserController=require('./user-controller');
+    const CartController=require('./cart-controller');
+    const OrderController=require('./order-controller');
+    const OrderDetailsController=require('./orderdetails-controller');
     const db=require('../db/models');
     const UserModel=db.User;
     const ProductModel=db.Product;
     const AdminModel=db.Admin;
 
-    /**Admin Routes */
-    ROUTER.post('/admin/login',(req,res)=>{
-         const email=req.body.email;
-         const password=req.body.password;
-         console.log(email,password);
-        AdminModel.findAll({
-            where: { email:email,password:password },
-            })
-            .then(data=>res.json(data))
-    .catch(err=>{
-        res.status(500)
-        .send({message:err.message || "something went wrong"})
-    });
-
-     });
-
-
-    /**Category Routes */
+   /**Category Routes */
 
     ROUTER.get('/categories',CategoryController.findAll)
 
@@ -65,6 +51,21 @@ module.exports=(app)=>{
     });
 
 
+/*
+    Cart Routes
+*/
+    ROUTER.post('/cartitems/add',CartController.create);
+/*
+    Orders Route
+*/
+    // ROUTER.get('/orderdetails/orderbyuser/:id',OrderDetailsController.findAll);
+    ROUTER.get('/orderdetails',OrderDetailsController.findAll);
+
+    ROUTER.post('/orders/add',OrderController.create);
+
+//order details route
+
+    ROUTER.post('/orderdetails/add',OrderDetailsController.create);
 
 
      /**User Routes */
@@ -85,6 +86,21 @@ module.exports=(app)=>{
 
      });
 
+      /**Admin Routes */
+    ROUTER.post('/admin/login',(req,res)=>{
+        const email=req.body.email;
+        const password=req.body.password;
+        console.log(email,password);
+       AdminModel.findAll({
+           where: { email:email,password:password },
+           })
+           .then(data=>res.json(data))
+   .catch(err=>{
+       res.status(500)
+       .send({message:err.message || "something went wrong"})
+   });
+
+    });
      
     app.use('/app',ROUTER);
 }
